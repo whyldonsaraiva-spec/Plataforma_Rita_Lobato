@@ -1,0 +1,382 @@
+/* ============================================
+   Plataforma Rita Lobato — Estilos Globais
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f8e9;
+    color: #333;
+}
+
+/* ---------- Header ---------- */
+header {
+    background: linear-gradient(135deg, #2e7d32, #388e3c);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0 0;
+    opacity: 0.92;
+    font-size: 1.1rem;
+}
+
+/* ---------- Container ---------- */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.container>h2 {
+    color: #2e7d32;
+}
+
+/* ---------- Grid ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #43a047;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
+}
+
+.card h2 {
+    margin-top: 0.3rem;
+    color: #2e7d32;
+}
+
+.card-desc {
+    color: #666;
+    font-size: 0.92rem;
+}
+
+/* Estado icon */
+.estado-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- Tags ---------- */
+.tag {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #43a047;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Cards Públicas Pagas (Vermelho) ---------- */
+.card-paga {
+    border: 1.5px solid #ef5350;
+    border-top: 5px solid #c62828;
+    background-color: #fffafa;
+}
+
+.card-paga:hover {
+    box-shadow: 0 8px 20px rgba(198, 40, 40, 0.18);
+}
+
+.card-paga h2 {
+    color: #c62828;
+}
+
+.tag-paga {
+    display: inline-block;
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.btn-paga {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #c62828;
+    color: white;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.btn-paga:hover {
+    background-color: #8e0000;
+}
+
+/* ---------- Legenda ---------- */
+.legenda {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legenda-cor {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.legenda-cor.verde {
+    background-color: #43a047;
+}
+
+.legenda-cor.vermelha {
+    background-color: #c62828;
+}
+
+/* ---------- Controles de Ordenação ---------- */
+.controles-ordenacao {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+    align-items: center;
+}
+
+.controles-ordenacao label {
+    font-weight: bold;
+    color: #2e7d32;
+    font-size: 0.95rem;
+}
+
+.select-ordenacao {
+    background-color: white;
+    color: #2e7d32;
+    border: 2px solid #43a047;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-family: inherit;
+    outline: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.select-ordenacao:hover,
+.select-ordenacao:focus {
+    background-color: #e8f5e9;
+    border-color: #2e7d32;
+}
+
+.regiao-titulo {
+    color: #2e7d32;
+    border-bottom: 2px solid #c8e6c9;
+    padding-bottom: 0.4rem;
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #43a047;
+    color: white;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #2e7d32;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    max-width: 620px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    border-top: 5px solid #43a047;
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    transition: color 0.15s;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal h2 {
+    color: #2e7d32;
+    margin-top: 0.3rem;
+    padding-right: 2rem;
+}
+
+.modal h3 {
+    color: #388e3c;
+    margin-bottom: 0.4rem;
+    margin-top: 1rem;
+}
+
+.modal ul {
+    padding-left: 1.3rem;
+    margin-top: 0.3rem;
+}
+
+.modal ul li {
+    margin-bottom: 0.25rem;
+}
+
+.info-section {
+    margin-bottom: 0.6rem;
+}
+
+.info-section p {
+    margin: 0.3rem 0;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, #2e7d32, #388e3c);
+    color: white;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.92;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        padding: 1.2rem;
+    }
+}

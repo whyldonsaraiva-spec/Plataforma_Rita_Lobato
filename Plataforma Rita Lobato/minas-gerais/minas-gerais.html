@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minas Gerais - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Minas Gerais</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Minas Gerais</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFMG</h2>
+                <p><strong>Localização:</strong> Belo Horizonte - MG (campus em Montes Claros)</p>
+                <p>Uma das melhores universidades do Brasil e da América Latina, referência em pesquisa, inovação e Medicina.</p>
+                <button class="btn" onclick="abrirModal('ufmg')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFU</h2>
+                <p><strong>Localização:</strong> Uberlândia - MG (campi em Ituiutaba, Monte Carmelo e Patos de Minas)</p>
+                <p>Referência no Triângulo Mineiro com forte atuação em tecnologia, agrárias e ciências da saúde.</p>
+                <button class="btn" onclick="abrirModal('ufu')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFJF</h2>
+                <p><strong>Localização:</strong> Juiz de Fora - MG (campus em Governador Valadares)</p>
+                <p>Importante polo acadêmico da Zona da Mata com destaque nacional em saúde e humanidades.</p>
+                <button class="btn" onclick="abrirModal('ufjf')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFV</h2>
+                <p><strong>Localização:</strong> Viçosa - MG (campi em Florestal e Rio Paranaíba)</p>
+                <p>Referência nacional e internacional em ciências agrárias, biológicas e ciências médicas.</p>
+                <button class="btn" onclick="abrirModal('ufv')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFOP</h2>
+                <p><strong>Localização:</strong> Ouro Preto - MG (campi em Mariana e João Monlevade)</p>
+                <p>Localizada em cidade histórica, tradicional polo em Medicina, Farmácia e Engenharias.</p>
+                <button class="btn" onclick="abrirModal('ufop')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFLA</h2>
+                <p><strong>Localização:</strong> Lavras - MG (campus em São Sebastião do Paraíso)</p>
+                <p>Reconhecida pela excelência em agrárias, biotecnologia e curso de Medicina de destaque.</p>
+                <button class="btn" onclick="abrirModal('ufla')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEMG</h2>
+                <p><strong>Localização:</strong> Belo Horizonte - MG (unidades em diversas cidades)</p>
+                <p>Universidade estadual multicampi com curso de Medicina em Passos e tradição em formação de professores.</p>
+                <button class="btn" onclick="abrirModal('uemg')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFSJ</h2>
+                <p><strong>Localização:</strong> São João del-Rei - MG (campi em Divinópolis, Ouro Branco e Sete Lagoas)</p>
+                <p>Universidade federal com campus de Saúde e Medicina em Divinópolis e engenharias de ponta.</p>
+                <button class="btn" onclick="abrirModal('ufsj')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFTM</h2>
+                <p><strong>Localização:</strong> Uberaba - MG (campus em Iturama)</p>
+                <p>Originada da conceituada Faculdade de Medicina do Triângulo Mineiro, referência hospitalar e acadêmica.</p>
+                <button class="btn" onclick="abrirModal('uftm')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFVJM</h2>
+                <p><strong>Localização:</strong> Diamantina - MG (campi em Teófilo Otoni, Janaúba e Unaí)</p>
+                <p>Instituição federal estratégica nos Vales do Jequitinhonha e Mucuri, com Medicina em Diamantina e Teófilo Otoni.</p>
+                <button class="btn" onclick="abrirModal('ufvjm')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UNIFAL</h2>
+                <p><strong>Localização:</strong> Alfenas - MG (campi em Poços de Caldas e Varginha)</p>
+                <p>Centenária tradição na área biomédica e farmacêutica, com consolidado e prestigiado curso de Medicina.</p>
+                <button class="btn" onclick="abrirModal('unifal')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNIMONTES</h2>
+                <p><strong>Localização:</strong> Montes Claros - MG (campi no Norte e Noroeste mineiro)</p>
+                <p>Principal universidade pública estadual do Norte de Minas, referência em Medicina e atendimento hospitalar regional.</p>
+                <button class="btn" onclick="abrirModal('unimontes')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufmg: {
+            nome: "Universidade Federal de Minas Gerais",
+            sigla: "UFMG",
+            tipo: "Federal",
+            cidade: "Belo Horizonte - MG (campus em Montes Claros)",
+            descricao: "Uma das melhores universidades do Brasil e da América Latina, referência em pesquisa e inovação.",
+            ingresso: [
+                "SiSU (via nota do ENEM) — 100% das vagas",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência FUMP (Fundação Mendes Pimentel)",
+                "Moradia universitária",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Auxílio material escolar",
+                "Assistência à saúde médica e odontológica"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Engenharias",
+                "Ciência da Computação",
+                "Comunicação Social",
+                "Filosofia",
+                "Ciências Biológicas"
+            ],
+            site: "https://www.ufmg.br"
+        },
+        ufu: {
+            nome: "Universidade Federal de Uberlândia",
+            sigla: "UFU",
+            tipo: "Federal",
+            cidade: "Uberlândia - MG (campi em Ituiutaba, Monte Carmelo e Patos de Minas)",
+            descricao: "Referência no Triângulo Mineiro com forte atuação em tecnologia e saúde.",
+            ingresso: [
+                "Vestibular próprio (1º semestre)",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio alimentação",
+                "Bolsa de apoio financeiro"
+            ],
+            cursos: [
+                "Medicina",
+                "Engenharia Mecânica",
+                "Odontologia",
+                "Direito",
+                "Agronomia",
+                "Administração"
+            ],
+            site: "https://www.ufu.br"
+        },
+        ufjf: {
+            nome: "Universidade Federal de Juiz de Fora",
+            sigla: "UFJF",
+            tipo: "Federal",
+            cidade: "Juiz de Fora - MG (campus em Governador Valadares)",
+            descricao: "Importante polo acadêmico da Zona da Mata com destaque em saúde e humanidades.",
+            ingresso: [
+                "PISM (Programa de Ingresso Seletivo Misto)",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia estudantil",
+                "Restaurante universitário",
+                "Auxílio transporte",
+                "Auxílio alimentação"
+            ],
+            cursos: [
+                "Medicina (Juiz de Fora e Governador Valadares)",
+                "Farmácia",
+                "Engenharia Elétrica",
+                "Direito",
+                "Comunicação Social",
+                "Artes e Design"
+            ],
+            site: "https://www.ufjf.br"
+        },
+        ufv: {
+            nome: "Universidade Federal de Viçosa",
+            sigla: "UFV",
+            tipo: "Federal",
+            cidade: "Viçosa - MG (campi em Florestal e Rio Paranaíba)",
+            descricao: "Referência nacional e internacional em ciências agrárias e ambientais.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa moradia (alojamento próprio)",
+                "Restaurante universitário subsidiado",
+                "Bolsa de alimentação",
+                "Bolsa permanência",
+                "Serviço de saúde próprio"
+            ],
+            cursos: [
+                "Medicina",
+                "Agronomia",
+                "Engenharia Florestal",
+                "Medicina Veterinária",
+                "Bioquímica",
+                "Zootecnia"
+            ],
+            site: "https://www.ufv.br"
+        },
+        ufop: {
+            nome: "Universidade Federal de Ouro Preto",
+            sigla: "UFOP",
+            tipo: "Federal",
+            cidade: "Ouro Preto - MG (campi em Mariana e João Monlevade)",
+            descricao: "Localizada em cidade histórica, destaque em engenharias de minas e metalurgia.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Repúblicas federais tradicionais (alojamento)",
+                "Restaurante universitário subsidiado",
+                "Auxílio alimentação"
+            ],
+            cursos: [
+                "Medicina",
+                "Engenharia de Minas",
+                "Engenharia Metalúrgica",
+                "Farmácia",
+                "História",
+                "Direito"
+            ],
+            site: "https://www.ufop.br"
+        },
+        ufla: {
+            nome: "Universidade Federal de Lavras",
+            sigla: "UFLA",
+            tipo: "Federal",
+            cidade: "Lavras - MG",
+            descricao: "Reconhecida pela excelência em agrárias e ciências ambientais.",
+            ingresso: [
+                "PAS (Processo de Avaliação Seriada)",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Moradia estudantil",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Agronomia",
+                "Medicina Veterinária",
+                "Engenharia Florestal",
+                "Ciência da Computação",
+                "Administração",
+                "Zootecnia"
+            ],
+            site: "https://www.ufla.br"
+        },
+        uemg: {
+            nome: "Universidade do Estado de Minas Gerais",
+            sigla: "UEMG",
+            tipo: "Estadual",
+            cidade: "Belo Horizonte - MG (unidades em diversas cidades)",
+            descricao: "Universidade estadual multicampi com curso de Medicina em Passos e tradição em formação de professores.",
+            ingresso: [
+                "Vestibular próprio",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência PEAES",
+                "Auxílio alimentação",
+                "Auxílio transporte",
+                "Bolsa monitoria"
+            ],
+            cursos: [
+                "Medicina (Passos)",
+                "Design",
+                "Artes Visuais",
+                "Pedagogia",
+                "Engenharia Civil",
+                "Administração",
+                "Música"
+            ],
+            site: "https://www.uemg.br"
+        },
+        ufsj: {
+            nome: "Universidade Federal de São João del-Rei",
+            sigla: "UFSJ",
+            tipo: "Federal",
+            cidade: "São João del-Rei - MG (campi em Divinópolis, Ouro Branco e Sete Lagoas)",
+            descricao: "Universidade federal multicampi com conceituado campus de Ciências da Saúde e Medicina em Divinópolis.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)",
+                "Ações afirmativas"
+            ],
+            auxilios: [
+                "Bolsa de apoio à permanência",
+                "Restaurante universitário",
+                "Auxílio moradia",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Divinópolis)",
+                "Bioquímica",
+                "Farmácia",
+                "Enfermagem",
+                "Engenharia Mecânica",
+                "Psicologia",
+                "História"
+            ],
+            site: "https://ufsj.edu.br"
+        },
+        uftm: {
+            nome: "Universidade Federal do Triângulo Mineiro",
+            sigla: "UFTM",
+            tipo: "Federal",
+            cidade: "Uberaba - MG (campus em Iturama)",
+            descricao: "Originada da renomada Faculdade de Medicina do Triângulo Mineiro (FMTM), com hospital universitário de ponta e excelência na área médica.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência PROAFE",
+                "Restaurante universitário subsidiado",
+                "Auxílio moradia estudantil",
+                "Auxílio transporte e alimentação"
+            ],
+            cursos: [
+                "Medicina",
+                "Biomedicina",
+                "Fisioterapia",
+                "Enfermagem",
+                "Terapia Ocupacional",
+                "Engenharia Civil",
+                "Psicologia"
+            ],
+            site: "http://www.uftm.edu.br"
+        },
+        ufvjm: {
+            nome: "Universidade Federal dos Vales do Jequitinhonha e Mucuri",
+            sigla: "UFVJM",
+            tipo: "Federal",
+            cidade: "Diamantina - MG (campi em Teófilo Otoni, Janaúba e Unaí)",
+            descricao: "Instituição federal de grande relevância no desenvolvimento regional, com cursos conceituados de Medicina em Diamantina e Teófilo Otoni.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "SASI (Seleção Seriada da UFVJM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência PROACE",
+                "Restaurante universitário subsidiado",
+                "Auxílio moradia e auxílio creche",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Diamantina e Teófilo Otoni)",
+                "Odontologia",
+                "Farmácia",
+                "Fisioterapia",
+                "Agronomia",
+                "Engenharia Florestal"
+            ],
+            site: "http://www.ufvjm.edu.br"
+        },
+        unifal: {
+            nome: "Universidade Federal de Alfenas",
+            sigla: "UNIFAL",
+            tipo: "Federal",
+            cidade: "Alfenas - MG (campi em Poços de Caldas e Varginha)",
+            descricao: "Mais de um século de tradição na área biomédica e de saúde, com consolidado curso de Medicina e estrutura hospitalar integrada.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência PRACE",
+                "Restaurante universitário subsidiado",
+                "Auxílio moradia",
+                "Auxílio alimentação e transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Farmácia",
+                "Odontologia",
+                "Biomedicina",
+                "Biotecnologia",
+                "Nutrição",
+                "Ciências Econômicas"
+            ],
+            site: "https://www.unifal-mg.edu.br"
+        },
+        unimontes: {
+            nome: "Universidade Estadual de Montes Claros",
+            sigla: "UNIMONTES",
+            tipo: "Estadual",
+            cidade: "Montes Claros - MG (campi em diversas cidades do Norte de Minas)",
+            descricao: "Universidade estadual pública e gratuita, polo formador de excelência médica no Norte de Minas com o Hospital Universitário Clemente de Faria.",
+            ingresso: [
+                "PAES (Programa de Avaliação Seriada para o Acesso ao Ensino Superior)",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais socioeconômicas"
+            ],
+            auxilios: [
+                "Bolsa permanência estadual",
+                "Auxílio transporte",
+                "Bolsas de apoio acadêmico e monitoria",
+                "Apoio pedagógico e socioeconômico"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Enfermagem",
+                "Direito",
+                "Ciências Contábeis",
+                "Pedagogia",
+                "História"
+            ],
+            site: "https://unimontes.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

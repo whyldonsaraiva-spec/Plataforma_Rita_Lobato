@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahia - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Bahia</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Bahia</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFBA</h2>
+                <p><strong>Localização:</strong> Salvador - BA</p>
+                <p>Maior universidade federal do estado, referência em pesquisa, cultura e saúde.</p>
+                <button class="btn" onclick="abrirModal('ufba')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFRB</h2>
+                <p><strong>Localização:</strong> Cruz das Almas - BA (campi em Santo Antônio de Jesus, Amargosa e Feira)</p>
+                <p>Universidade com forte atuação no Recôncavo Baiano e cursos ligados à agricultura e saúde.</p>
+                <button class="btn" onclick="abrirModal('ufrb')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFSB</h2>
+                <p><strong>Localização:</strong> Itabuna / Porto Seguro / Teixeira de Freitas - BA</p>
+                <p>Universidade multicampi com modelo pedagógico inovador em ciclos de formação e campus médico.</p>
+                <button class="btn" onclick="abrirModal('ufsb')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNEB</h2>
+                <p><strong>Localização:</strong> Salvador (sede) - BA (29 campi em todo o estado)</p>
+                <p>Maior universidade multicampi do estado com presença em todas as regiões da Bahia.</p>
+                <button class="btn" onclick="abrirModal('uneb')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UESC</h2>
+                <p><strong>Localização:</strong> Ilhéus - BA</p>
+                <p>Referência na região cacaueira, com destaque em ciências agrárias e biomédicas.</p>
+                <button class="btn" onclick="abrirModal('uesc')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UESB</h2>
+                <p><strong>Localização:</strong> Vitória da Conquista - BA (campi em Jequié e Itapetinga)</p>
+                <p>Principal universidade do sudoeste baiano com forte atuação em saúde e agrárias.</p>
+                <button class="btn" onclick="abrirModal('uesb')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEFS</h2>
+                <p><strong>Localização:</strong> Feira de Santana - BA</p>
+                <p>Importante universidade estadual no Portal do Sertão, com excelência em Medicina e tecnologia.</p>
+                <button class="btn" onclick="abrirModal('uefs')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFOB</h2>
+                <p><strong>Localização:</strong> Barreiras - BA (campi em Bom Jesus da Lapa, Barra e Santa Maria da Vitória)</p>
+                <p>Instituição federal estratégica para o desenvolvimento científico e médico do Oeste baiano.</p>
+                <button class="btn" onclick="abrirModal('ufob')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UNIVASF</h2>
+                <p><strong>Localização:</strong> Juazeiro e Paulo Afonso - BA</p>
+                <p>Universidade federal interestadual com campi na Bahia focados em Medicina e ciências integradas.</p>
+                <button class="btn" onclick="abrirModal('univasf')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufba: {
+            sigla: "UFBA",
+            nome: "Universidade Federal da Bahia",
+            tipo: "Federal",
+            cidade: "Salvador - BA",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Engenharias",
+                "Artes",
+                "Comunicação",
+                "Ciências da Saúde"
+            ],
+            site: "https://www.ufba.br"
+        },
+        ufrb: {
+            sigla: "UFRB",
+            nome: "Universidade Federal do Recôncavo da Bahia",
+            tipo: "Federal",
+            cidade: "Cruz das Almas - BA",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio creche"
+            ],
+            cursos: [
+                "Agronomia",
+                "Engenharia Florestal",
+                "Medicina (Santo Antônio de Jesus)",
+                "Ciências Biológicas",
+                "Educação do Campo"
+            ],
+            site: "https://www.ufrb.edu.br"
+        },
+        ufsb: {
+            sigla: "UFSB",
+            nome: "Universidade Federal do Sul da Bahia",
+            tipo: "Federal",
+            cidade: "Itabuna / Porto Seguro / Teixeira de Freitas - BA",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Auxílio alimentação",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Teixeira de Freitas)",
+                "Bacharelados Interdisciplinares",
+                "Licenciaturas Interdisciplinares",
+                "Ciências",
+                "Humanidades",
+                "Saúde"
+            ],
+            site: "https://www.ufsb.edu.br"
+        },
+        uneb: {
+            sigla: "UNEB",
+            nome: "Universidade do Estado da Bahia",
+            tipo: "Estadual",
+            cidade: "Salvador (sede) - BA (29 campi em todo o estado)",
+            ingresso: [
+                "Vestibular próprio (PROSEL)",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa trabalho",
+                "Auxílio alimentação",
+                "Residência universitária",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Salvador)",
+                "Pedagogia",
+                "Administração",
+                "Enfermagem",
+                "Direito",
+                "Engenharia de Produção"
+            ],
+            site: "https://portal.uneb.br"
+        },
+        uesc: {
+            sigla: "UESC",
+            nome: "Universidade Estadual de Santa Cruz",
+            tipo: "Estadual",
+            cidade: "Ilhéus - BA",
+            ingresso: [
+                "Vestibular próprio / SiSU",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário subsidiado",
+                "Auxílio moradia",
+                "Bolsa atividade"
+            ],
+            cursos: [
+                "Medicina",
+                "Biomedicina",
+                "Agronomia",
+                "Ciência da Computação",
+                "Letras",
+                "Economia",
+                "Química"
+            ],
+            site: "https://www.uesc.br"
+        },
+        uesb: {
+            sigla: "UESB",
+            nome: "Universidade Estadual do Sudoeste da Bahia",
+            tipo: "Estadual",
+            cidade: "Vitória da Conquista - BA (campi em Jequié e Itapetinga)",
+            ingresso: [
+                "Vestibular próprio",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa trabalho",
+                "Restaurante universitário",
+                "Auxílio moradia",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Vitória da Conquista e Jequié)",
+                "Odontologia",
+                "Engenharia de Alimentos",
+                "Zootecnia",
+                "Direito",
+                "Ciências Biológicas"
+            ],
+            site: "https://www.uesb.br"
+        },
+        uefs: {
+            sigla: "UEFS",
+            nome: "Universidade Estadual de Feira de Santana",
+            tipo: "Estadual",
+            cidade: "Feira de Santana - BA",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Vestibular próprio / Processo seletivo",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Farmácia",
+                "Engenharia Civil",
+                "Direito",
+                "Ciências Biológicas",
+                "Letras"
+            ],
+            site: "https://www.uefs.br"
+        },
+        ufob: {
+            sigla: "UFOB",
+            nome: "Universidade Federal do Oeste da Bahia",
+            tipo: "Federal",
+            cidade: "Barreiras - BA (campi em Bom Jesus da Lapa, Barra e Santa Maria da Vitória)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)",
+                "Ações afirmativas regionais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Auxílio alimentação",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Barreiras)",
+                "Engenharia Civil",
+                "Agronomia",
+                "Direito",
+                "Geografia",
+                "Química",
+                "Medicina Veterinária"
+            ],
+            site: "https://www.ufob.edu.br"
+        },
+        univasf: {
+            sigla: "UNIVASF",
+            nome: "Universidade Federal do Vale do São Francisco",
+            tipo: "Federal",
+            cidade: "Juazeiro e Paulo Afonso - BA",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)",
+                "Bônus de inclusão regional"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário",
+                "Moradia estudantil",
+                "Auxílio alimentação"
+            ],
+            cursos: [
+                "Medicina (Paulo Afonso)",
+                "Engenharia Agronômica",
+                "Engenharia de Produção",
+                "Ciências Biológicas",
+                "Artes Visuais",
+                "Zootecnia"
+            ],
+            site: "https://portais.univasf.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

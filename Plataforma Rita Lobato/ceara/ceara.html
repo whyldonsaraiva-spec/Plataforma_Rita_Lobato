@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceará - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Ceará</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Ceará</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFC</h2>
+                <p><strong>Localização:</strong> Fortaleza - CE (campi em Sobral, Quixadá, Russas e Crateús)</p>
+                <p>Principal universidade do Ceará, referência nacional em Medicina, pesquisa e inovação.</p>
+                <button class="btn" onclick="abrirModal('ufc')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFCA</h2>
+                <p><strong>Localização:</strong> Juazeiro do Norte - CE (campi em Barbalha, Crato, Brejo Santo e Icó)</p>
+                <p>Universidade federal do Cariri cearense, com consolidado curso de Medicina em Barbalha.</p>
+                <button class="btn" onclick="abrirModal('ufca')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UECE</h2>
+                <p><strong>Localização:</strong> Fortaleza - CE (campi em Quixeramobim, Crateús, Iguatu e outros)</p>
+                <p>Maior universidade estadual do Ceará, com Medicina em Fortaleza e Quixeramobim.</p>
+                <button class="btn" onclick="abrirModal('uece')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UVA</h2>
+                <p><strong>Localização:</strong> Sobral - CE</p>
+                <p>Universidade Estadual Vale do Acaraú, importante polo público gratuito da região Norte do Ceará.</p>
+                <button class="btn" onclick="abrirModal('uva')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufc: {
+            sigla: "UFC",
+            nome: "Universidade Federal do Ceará",
+            tipo: "Federal",
+            cidade: "Fortaleza - CE (campi em Sobral, Quixadá, Russas e Crateús)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Fortaleza e Sobral)",
+                "Odontologia",
+                "Farmácia",
+                "Direito",
+                "Engenharias",
+                "Ciência da Computação"
+            ],
+            site: "https://www.ufc.br"
+        },
+        ufca: {
+            sigla: "UFCA",
+            nome: "Universidade Federal do Cariri",
+            tipo: "Federal",
+            cidade: "Juazeiro do Norte - CE (campi em Barbalha, Crato, Brejo Santo e Icó)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio alimentação e transporte"
+            ],
+            cursos: [
+                "Medicina (Barbalha)",
+                "Engenharia Civil",
+                "Administração Pública",
+                "Agronomia",
+                "Medicina Veterinária"
+            ],
+            site: "https://www.ufca.edu.br"
+        },
+        uece: {
+            sigla: "UECE",
+            nome: "Universidade Estadual do Ceará",
+            tipo: "Estadual",
+            cidade: "Fortaleza - CE (campi em Quixeramobim, Crateús, Iguatu e outros)",
+            ingresso: [
+                "Vestibular próprio (CEV/UECE)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário",
+                "Auxílio transporte",
+                "Bolsas de monitoria"
+            ],
+            cursos: [
+                "Medicina (Fortaleza e Quixeramobim)",
+                "Enfermagem",
+                "Medicina Veterinária",
+                "Nutrição",
+                "Ciências Biológicas"
+            ],
+            site: "https://www.uece.br"
+        },
+        uva: {
+            sigla: "UVA",
+            nome: "Universidade Estadual Vale do Acaraú",
+            tipo: "Estadual",
+            cidade: "Sobral - CE",
+            ingresso: [
+                "Vestibular próprio",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio alimentação",
+                "Bolsas de iniciação científica"
+            ],
+            cursos: [
+                "Enfermagem",
+                "Engenharia Civil",
+                "Direito",
+                "Ciências Biológicas",
+                "Pedagogia"
+            ],
+            site: "https://www.uvanet.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() { document.getElementById('modal-overlay').classList.remove('active'); }
+    document.getElementById('modal-overlay').addEventListener('click', function(e) { if (e.target === this) fecharModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fecharModal(); });
+    </script>
+</body>
+</html>

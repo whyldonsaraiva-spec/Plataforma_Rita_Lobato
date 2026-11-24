@@ -1,0 +1,681 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Paulo - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — São Paulo</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — São Paulo</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="legenda">
+            <div class="legenda-item">
+                <span class="legenda-cor verde"></span>
+                <span>Pública Gratuita</span>
+            </div>
+            <div class="legenda-item">
+                <span class="legenda-cor vermelha"></span>
+                <span>Pública Paga (Cobra Mensalidade)</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>USP</h2>
+                <p><strong>Localização:</strong> São Paulo - SP (campi em Ribeirão Preto, São Carlos, Piracicaba, Bauru, Lorena, Pirassununga e Santos)</p>
+                <p>Maior e mais prestigiada universidade do Brasil e da América Latina.</p>
+                <button class="btn" onclick="abrirModal('usp')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNICAMP</h2>
+                <p><strong>Localização:</strong> Campinas - SP (campi em Limeira e Piracicaba)</p>
+                <p>Referência mundial em inovação tecnológica e pesquisa científica.</p>
+                <button class="btn" onclick="abrirModal('unicamp')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNESP</h2>
+                <p><strong>Localização:</strong> São Paulo - SP (34 unidades em 24 cidades do estado)</p>
+                <p>Maior universidade multicampi do país com presença em todo o estado de São Paulo.</p>
+                <button class="btn" onclick="abrirModal('unesp')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UNIFESP</h2>
+                <p><strong>Localização:</strong> São Paulo - SP (campi em Guarulhos, Diadema, São José dos Campos, Osasco e Santos)</p>
+                <p>Originada da Escola Paulista de Medicina, expandiu-se para diversas áreas do conhecimento.</p>
+                <button class="btn" onclick="abrirModal('unifesp')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFSCar</h2>
+                <p><strong>Localização:</strong> São Carlos - SP (campi em Araras, Sorocaba e Lagoa do Sino)</p>
+                <p>Reconhecida pela excelência em pesquisa e pós-graduação, especialmente em exatas e tecnologia.</p>
+                <button class="btn" onclick="abrirModal('ufscar')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFABC</h2>
+                <p><strong>Localização:</strong> Santo André - SP (campus em São Bernardo do Campo)</p>
+                <p>Universidade com modelo interdisciplinar inovador baseado em Bacharelados em Ciência e Tecnologia.</p>
+                <button class="btn" onclick="abrirModal('ufabc')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>FAMEMA</h2>
+                <p><strong>Localização:</strong> Marília - SP</p>
+                <p>Faculdade pública estadual e gratuita de Medicina e Enfermagem com metodologia ativa (PBL).</p>
+                <button class="btn" onclick="abrirModal('famema')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>FAMERP</h2>
+                <p><strong>Localização:</strong> São José do Rio Preto - SP</p>
+                <p>Faculdade pública estadual e gratuita, referência em Medicina associada ao Hospital de Base.</p>
+                <button class="btn" onclick="abrirModal('famerp')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>FAI</h2>
+                <p><strong>Localização:</strong> Adamantina - SP</p>
+                <p>Centro Universitário de Adamantina, autarquia pública municipal com curso de Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('fai')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>FMJ</h2>
+                <p><strong>Localização:</strong> Jundiaí - SP</p>
+                <p>Faculdade de Medicina de Jundiaí, tradicional autarquia municipal de ensino médico. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('fmj')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>FMPFM</h2>
+                <p><strong>Localização:</strong> Mogi Guaçu - SP</p>
+                <p>Faculdade Municipal Professor Franco Montoro, instituição municipal com curso de Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('fmpfm')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>IMESA</h2>
+                <p><strong>Localização:</strong> Assis - SP</p>
+                <p>Instituto Municipal de Ensino Superior de Assis (FEMA), autarquia municipal com Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('imesa')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UNIFACEF</h2>
+                <p><strong>Localização:</strong> Franca - SP</p>
+                <p>Centro Universitário Municipal de Franca, autarquia pública de ensino com Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unifacef')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UNIFAE</h2>
+                <p><strong>Localização:</strong> São João da Boa Vista - SP</p>
+                <p>Centro Universitário público municipal com destaque na área da saúde e Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unifae')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UNIFUNEC</h2>
+                <p><strong>Localização:</strong> Santa Fé do Sul - SP</p>
+                <p>Centro Universitário mantido pela fundação municipal pública FUNEC. Possui Medicina e cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unifunec')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UNITAU</h2>
+                <p><strong>Localização:</strong> Taubaté - SP</p>
+                <p>Maior universidade pública municipal paulista, autarquia municipal com tradicional curso de Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unitau')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>USCS</h2>
+                <p><strong>Localização:</strong> São Caetano do Sul - SP (campi em SP Capital e Itapetininga)</p>
+                <p>Universidade Municipal de São Caetano do Sul, autarquia municipal com múltiplos campi médicos. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('uscs')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        usp: {
+            nome: "Universidade de São Paulo",
+            sigla: "USP",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "São Paulo - SP (campi em Ribeirão Preto, São Carlos, Piracicaba, Bauru, Lorena, Pirassununga e Santos)",
+            descricao: "Maior e mais prestigiada universidade do Brasil e da América Latina.",
+            ingresso: [
+                "Fuvest (vestibular próprio)",
+                "Provão Paulista Seriado",
+                "SiSU (vagas parciais em alguns cursos)",
+                "Cotas (Escola pública via INCLUSP)"
+            ],
+            auxilios: [
+                "PAPFE (Programa de Apoio à Permanência e Formação Estudantil)",
+                "Moradia estudantil (CRUSP)",
+                "Restaurante universitário subsidiado (Bandejão)",
+                "Auxílio transporte",
+                "Bolsa livro"
+            ],
+            cursos: [
+                "Medicina (Pinheiros, Ribeirão Preto e Bauru)",
+                "Engenharias (Poli)",
+                "Direito (Largo de São Francisco)",
+                "Administração (FEA)",
+                "Arquitetura (FAU)",
+                "Comunicação (ECA)",
+                "Ciências (IME, IF, IQ)"
+            ],
+            site: "https://www.usp.br"
+        },
+        unicamp: {
+            nome: "Universidade Estadual de Campinas",
+            sigla: "UNICAMP",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "Campinas - SP (campi em Limeira e Piracicaba)",
+            descricao: "Referência mundial em inovação tecnológica e pesquisa científica.",
+            ingresso: [
+                "Vestibular Unicamp (Comvest)",
+                "Provão Paulista Seriado",
+                "Vagas Olímpicas",
+                "Cotas (Escola pública e étnico-raciais)"
+            ],
+            auxilios: [
+                "Bolsa auxílio social (SAE)",
+                "Moradia estudantil",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Serviço de saúde (CECOM)"
+            ],
+            cursos: [
+                "Medicina",
+                "Engenharias",
+                "Ciência da Computação",
+                "Física",
+                "Química",
+                "Economia",
+                "Artes Cênicas"
+            ],
+            site: "https://www.unicamp.br"
+        },
+        unesp: {
+            nome: "Universidade Estadual Paulista",
+            sigla: "UNESP",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "São Paulo - SP (34 unidades em 24 cidades do estado)",
+            descricao: "Maior universidade multicampi do país com presença em todo o estado de São Paulo.",
+            ingresso: [
+                "Vestibular Vunesp (vestibular próprio)",
+                "Provão Paulista Seriado",
+                "Cotas (Escola pública e étnico-raciais)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Programa de apoio acadêmico"
+            ],
+            cursos: [
+                "Medicina (Botucatu)",
+                "Odontologia (Araçatuba/Araraquara)",
+                "Engenharias",
+                "Ciências Biológicas",
+                "Direito",
+                "Pedagogia"
+            ],
+            site: "https://www.unesp.br"
+        },
+        unifesp: {
+            nome: "Universidade Federal de São Paulo",
+            sigla: "UNIFESP",
+            tipo: "Federal",
+            paga: false,
+            cidade: "São Paulo - SP (campi em Guarulhos, Diadema, São José dos Campos, Osasco e Santos)",
+            descricao: "Originada da Escola Paulista de Medicina, expandiu-se para diversas áreas do conhecimento.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Sistema misto (SiSU + vestibular para Medicina)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Programa de saúde mental"
+            ],
+            cursos: [
+                "Medicina (São Paulo - Escola Paulista de Medicina)",
+                "Enfermagem",
+                "Farmácia e Bioquímica",
+                "Ciências Sociais",
+                "Filosofia",
+                "Ciências Contábeis"
+            ],
+            site: "https://www.unifesp.br"
+        },
+        ufscar: {
+            nome: "Universidade Federal de São Carlos",
+            sigla: "UFSCar",
+            tipo: "Federal",
+            paga: false,
+            cidade: "São Carlos - SP (campi em Araras, Sorocaba e Lagoa do Sino)",
+            descricao: "Reconhecida pela excelência em pesquisa e pós-graduação, especialmente em exatas e tecnologia.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Moradia estudantil",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Bolsa atividade"
+            ],
+            cursos: [
+                "Medicina (São Carlos)",
+                "Engenharias",
+                "Ciência da Computação",
+                "Fisioterapia",
+                "Pedagogia",
+                "Química",
+                "Estatística"
+            ],
+            site: "https://www.ufscar.br"
+        },
+        ufabc: {
+            nome: "Universidade Federal do ABC",
+            sigla: "UFABC",
+            tipo: "Federal",
+            paga: false,
+            cidade: "Santo André - SP (campus em São Bernardo do Campo)",
+            descricao: "Universidade com modelo interdisciplinar inovador baseado em Bacharelados em Ciência e Tecnologia.",
+            ingresso: [
+                "SiSU (via nota do ENEM) — 100% das vagas",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Programa de tutoria"
+            ],
+            cursos: [
+                "Bacharelado em Ciência e Tecnologia (BC&T)",
+                "Bacharelado em Ciências e Humanidades (BC&H)",
+                "Engenharias",
+                "Neurociência",
+                "Políticas Públicas",
+                "Ciência da Computação"
+            ],
+            site: "https://www.ufabc.edu.br"
+        },
+        famema: {
+            nome: "Faculdade de Medicina de Marília",
+            sigla: "FAMEMA",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "Marília - SP",
+            descricao: "Instituição pública estadual paulista e gratuita, pioneira no Brasil na metodologia de Aprendizagem Baseada em Problemas (PBL).",
+            ingresso: [
+                "Vestibular próprio organizado pela Fundação Vunesp",
+                "Programa de Inclusão com Mérito no Ensino Superior Paulista (PIMESP/PAAES)"
+            ],
+            auxilios: [
+                "Programa de Apoio e Permanência Estudantil",
+                "Auxílio moradia",
+                "Auxílio alimentação",
+                "Bolsas de monitoria e iniciação científica"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem"
+            ],
+            site: "https://www.famema.br"
+        },
+        famerp: {
+            nome: "Faculdade de Medicina de São José do Rio Preto",
+            sigla: "FAMERP",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "São José do Rio Preto - SP",
+            descricao: "Uma das mais conceituadas faculdades públicas estaduais de Medicina do país, integrada ao complexo do Hospital de Base de Rio Preto (segundo maior hospital-escola do Brasil). Totalmente gratuita.",
+            ingresso: [
+                "Vestibular próprio organizado pela Fundação Vunesp",
+                "Sistema de Cotas PAAES (escola pública)"
+            ],
+            auxilios: [
+                "Bolsa auxílio social",
+                "Auxílio moradia estudantil",
+                "Restaurante universitário conveniado",
+                "Bolsas de pesquisa PIBIC/FAPESP"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem",
+                "Psicologia"
+            ],
+            site: "https://www.famerp.br"
+        },
+        fai: {
+            nome: "Centro Universitário de Adamantina",
+            sigla: "FAI",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Adamantina - SP",
+            descricao: "Autarquia municipal de ensino superior mantida pelo município de Adamantina. Possui curso de Medicina e cobra mensalidade.",
+            ingresso: [
+                "Vestibular de Medicina (banca Vunesp)",
+                "Processo seletivo via ENEM",
+                "Vestibular agendado"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Bolsas de estudo municipais",
+                "Programas de parcelamento institucional"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Medicina Veterinária",
+                "Direito",
+                "Psicologia",
+                "Fisioterapia"
+            ],
+            site: "https://www.fai.com.br"
+        },
+        fmj: {
+            nome: "Faculdade de Medicina de Jundiaí",
+            sigla: "FMJ",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Jundiaí - SP",
+            descricao: "Autarquia municipal pública de regime especial fundada em 1968, com tradição e excelência na formação médica. Cobra mensalidades.",
+            ingresso: [
+                "Vestibular próprio unificado via Fundação Vunesp"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Bolsas por carência socioeconômica da mantenedora",
+                "Estágios e bolsas de pesquisa remuneradas"
+            ],
+            cursos: [
+                "Medicina"
+            ],
+            site: "https://fmj.br"
+        },
+        fmpfm: {
+            nome: "Faculdade Municipal Professor Franco Montoro",
+            sigla: "FMPFM",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Mogi Guaçu - SP",
+            descricao: "Instituição de ensino superior municipal vinculada à Fundação Educacional Guaçuana (FEG). Oferece curso de Medicina com mensalidades.",
+            ingresso: [
+                "Vestibular de Medicina (banca Vunesp)",
+                "Nota do ENEM"
+            ],
+            auxilios: [
+                "FIES",
+                "Bolsas municipais da Prefeitura de Mogi Guaçu",
+                "Descontos e convênios institucionais"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem",
+                "Psicologia",
+                "Engenharia Química",
+                "Administração"
+            ],
+            site: "https://francomontoro.com.br"
+        },
+        imesa: {
+            nome: "Instituto Municipal de Ensino Superior de Assis (FEMA)",
+            sigla: "IMESA",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Assis - SP",
+            descricao: "Autarquia municipal pública mantida pela Fundação Educacional do Município de Assis (FEMA). Possui curso concorrido de Medicina e cobra mensalidade.",
+            ingresso: [
+                "Vestibular de Medicina organizado pela Fundação Vunesp",
+                "Vestibular agendado e ENEM para outros cursos"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Programa de bolsas municipais de Assis",
+                "Descontos por pontualidade e mérito"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Enfermagem",
+                "Ciência da Computação",
+                "Fisioterapia",
+                "Administração"
+            ],
+            site: "https://www.fema.edu.br"
+        },
+        unifacef: {
+            nome: "Centro Universitário Municipal de Franca",
+            sigla: "UNIFACEF",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Franca - SP",
+            descricao: "Autarquia pública municipal mantida pelo município de Franca. Instituição conceituada com curso de Medicina e cobrança de mensalidade.",
+            ingresso: [
+                "Vestibular de Medicina (banca Vunesp)",
+                "Processo seletivo via ENEM",
+                "Vestibular próprio"
+            ],
+            auxilios: [
+                "FIES",
+                "Bolsas de estudo socioeconômicas",
+                "Bolsas de monitoria e iniciação científica"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem",
+                "Engenharia de Produção",
+                "Sistemas de Informação",
+                "Administração",
+                "Ciências Contábeis"
+            ],
+            site: "https://www.unifacef.com.br"
+        },
+        unifae: {
+            nome: "Centro Universitário das Faculdades Associadas de Ensino",
+            sigla: "UNIFAE",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "São João da Boa Vista - SP",
+            descricao: "Autarquia municipal pública de São João da Boa Vista com forte presença na área de saúde e Medicina. Cobra mensalidades.",
+            ingresso: [
+                "Vestibular de Medicina (banca Vunesp)",
+                "ENEM",
+                "Vestibular próprio continuado"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Programa de Bolsas da Prefeitura",
+                "Convênios com empresas e municípios da região"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Fisioterapia",
+                "Farmácia",
+                "Direito",
+                "Engenharia Civil"
+            ],
+            site: "https://www.fae.br"
+        },
+        unifunec: {
+            nome: "Centro Universitário de Santa Fé do Sul",
+            sigla: "UNIFUNEC",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Santa Fé do Sul - SP",
+            descricao: "Centro universitário público municipal mantido pela FUNEC (Fundação Municipal de Educação e Cultura). Possui Medicina e cobra mensalidade.",
+            ingresso: [
+                "Vestibular de Medicina (Vunesp)",
+                "Nota do ENEM",
+                "Vestibular agendado"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Bolsas da FUNEC para alunos carentes",
+                "Convênios regionais"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Medicina Veterinária",
+                "Direito",
+                "Enfermagem",
+                "Pedagogia"
+            ],
+            site: "https://unifunec.edu.br"
+        },
+        unitau: {
+            nome: "Universidade de Taubaté",
+            sigla: "UNITAU",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Taubaté - SP",
+            descricao: "A maior autarquia educacional municipal do estado de São Paulo, com mais de 45 anos de tradição e complexo hospitalar de Medicina. Cobra mensalidades.",
+            ingresso: [
+                "Vestibular de Medicina de Verão e Inverno",
+                "Vestibular tradicional e agendado",
+                "Nota do ENEM"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "SIM (Sistema Integrado de Mensalidades / Financiamento próprio)",
+                "Bolsas de pesquisa, monitoria e extensão"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Direito",
+                "Engenharias",
+                "Psicologia",
+                "Arquitetura",
+                "Biotecnologia"
+            ],
+            site: "https://www.unitau.br"
+        },
+        uscs: {
+            nome: "Universidade Municipal de São Caetano do Sul",
+            sigla: "USCS",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "São Caetano do Sul - SP (campi também em SP Capital e Itapetininga)",
+            descricao: "Autarquia pública municipal de São Caetano do Sul, referência no Grande ABC com diversos campi de Medicina no estado. Cobra mensalidades.",
+            ingresso: [
+                "Vestibular próprio via Fundação Vunesp para Medicina",
+                "Processo seletivo via ENEM",
+                "Vestibular tradicional para demais cursos"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Bolsas de estudo para munícipes de São Caetano do Sul",
+                "Crédito universitário próprio e estágios remunerados"
+            ],
+            cursos: [
+                "Medicina (São Caetano, São Paulo e Itapetininga)",
+                "Farmácia",
+                "Odontologia",
+                "Direito",
+                "Psicologia",
+                "Ciência da Computação"
+            ],
+            site: "https://www.uscs.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        const tagClass = uni.paga ? 'tag-paga' : 'tag';
+        const btnClass = uni.paga ? 'btn-paga' : 'btn';
+        const tituloCor = uni.paga ? '#c62828' : '#2e7d32';
+        const modalEl = document.querySelector('.modal');
+        if (modalEl) {
+            modalEl.style.borderTopColor = uni.paga ? '#c62828' : '#43a047';
+        }
+        document.getElementById('modal-body').innerHTML =
+            '<span class="' + tagClass + '">' + uni.tipo + (uni.paga ? ' — Paga (Mensalidade)' : ' — Gratuita') + '</span>' +
+            '<h2 style="color:' + tituloCor + '">' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 ' + (uni.paga ? 'Mensalidade / Auxílios e Financiamento' : 'Auxílios e Assistência Estudantil') + '</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="' + btnClass + '">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tocantins - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Tocantins</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Tocantins</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="legenda">
+            <div class="legenda-item">
+                <span class="legenda-cor verde"></span>
+                <span>Pública Gratuita</span>
+            </div>
+            <div class="legenda-item">
+                <span class="legenda-cor vermelha"></span>
+                <span>Pública Paga (Cobra Mensalidade)</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFT</h2>
+                <p><strong>Localização:</strong> Palmas - TO (campi em Gurupi, Miracema, Porto Nacional, Arraias e Tocantinópolis)</p>
+                <p>Universidade federal com presença multicampi e forte atuação no desenvolvimento regional do estado.</p>
+                <button class="btn" onclick="abrirModal('uft')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFNT</h2>
+                <p><strong>Localização:</strong> Araguaína - TO (campi em Tocantinópolis, Xambioá e Guaraí)</p>
+                <p>Universidade federal criada do desmembramento da UFT no norte do estado, com destaque em Medicina e Ciências Agrárias.</p>
+                <button class="btn" onclick="abrirModal('ufnt')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNITINS</h2>
+                <p><strong>Localização:</strong> Palmas - TO (campi em Augustinópolis, Araguatins, Dianópolis e Paraíso)</p>
+                <p>Universidade pública estadual e gratuita do Tocantins, com campus de Medicina na região do Bico do Papagaio.</p>
+                <button class="btn" onclick="abrirModal('unitins')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UnirG</h2>
+                <p><strong>Localização:</strong> Gurupi - TO (campus em Paraíso do Tocantins)</p>
+                <p>Instituição pública municipal mantida pela Fundação UnirG. Possui tradicional curso de Medicina e cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unirg')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        uft: {
+            sigla: "UFT",
+            nome: "Universidade Federal do Tocantins",
+            tipo: "Federal",
+            paga: false,
+            cidade: "Palmas - TO (campi em Gurupi, Miracema, Porto Nacional, Arraias e Tocantinópolis)",
+            descricao: "Universidade federal com presença multicampi e forte atuação no desenvolvimento regional do estado.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Vestibular próprio complementar",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Auxílio creche"
+            ],
+            cursos: [
+                "Medicina (Palmas)",
+                "Direito",
+                "Engenharia Civil",
+                "Ciência da Computação",
+                "Agronomia",
+                "Medicina Veterinária",
+                "Pedagogia"
+            ],
+            site: "https://www.uft.edu.br"
+        },
+        ufnt: {
+            sigla: "UFNT",
+            nome: "Universidade Federal do Norte do Tocantins",
+            tipo: "Federal",
+            paga: false,
+            cidade: "Araguaína - TO (campi em Tocantinópolis, Xambioá e Guaraí)",
+            descricao: "Criada a partir do desmembramento do campus de Araguaína da UFT, polo universitário do norte tocantinense com forte foco em saúde e formação profissional.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Processo seletivo próprio (vestibular)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio alimentação",
+                "Bolsas de pesquisa e extensão"
+            ],
+            cursos: [
+                "Medicina (Araguaína)",
+                "Medicina Veterinária",
+                "Zootecnia",
+                "Biotecnologia",
+                "Direito",
+                "Letras",
+                "Geografia"
+            ],
+            site: "https://ufnt.edu.br"
+        },
+        unitins: {
+            sigla: "UNITINS",
+            nome: "Universidade Estadual do Tocantins",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "Palmas - TO (campi em Augustinópolis, Araguatins, Dianópolis e Paraíso)",
+            descricao: "Universidade pública estadual totalmente gratuita mantida pelo Governo do Estado do Tocantins, com curso de Medicina em Augustinópolis para atender o Bico do Papagaio.",
+            ingresso: [
+                "Vestibular próprio (TO Graduado / Vestibular Geral)",
+                "SiSU (vagas parciais)",
+                "Cotas da rede pública estadual"
+            ],
+            auxilios: [
+                "Bolsa permanência estadual (TO Mais Jovem)",
+                "Auxílio alimentação",
+                "Auxílio transporte intermunicipal",
+                "Bolsas de monitoria e iniciação científica"
+            ],
+            cursos: [
+                "Medicina (Câmpus Augustinópolis)",
+                "Enfermagem",
+                "Direito",
+                "Engenharia Agronômica",
+                "Sistemas de Informação",
+                "Pedagogia",
+                "Ciências Contábeis"
+            ],
+            site: "https://www.unitins.br"
+        },
+        unirg: {
+            sigla: "UnirG",
+            nome: "Universidade de Gurupi",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Gurupi - TO (campus também em Paraíso do Tocantins)",
+            descricao: "Instituição de ensino superior pública municipal mantida pela Fundação UnirG. Reconhecida tradição em Medicina e Odontologia. Cobra mensalidade em seus cursos.",
+            ingresso: [
+                "Vestibular próprio tradicional",
+                "Processo seletivo específico de Medicina (Gurupi e Paraíso)",
+                "Aproveitamento da nota do ENEM"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "PROUNI Municipal",
+                "Programa de Bolsas e descontos da Fundação UnirG",
+                "Convênios com prefeituras e órgãos públicos"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Direito",
+                "Enfermagem",
+                "Fisioterapia",
+                "Farmácia",
+                "Engenharia Civil",
+                "Psicologia"
+            ],
+            site: "https://www.unirg.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        const tagClass = uni.paga ? 'tag-paga' : 'tag';
+        const btnClass = uni.paga ? 'btn-paga' : 'btn';
+        const tituloCor = uni.paga ? '#c62828' : '#2e7d32';
+        const modalEl = document.querySelector('.modal');
+        if (modalEl) {
+            modalEl.style.borderTopColor = uni.paga ? '#c62828' : '#43a047';
+        }
+        document.getElementById('modal-body').innerHTML =
+            '<span class="' + tagClass + '">' + uni.tipo + (uni.paga ? ' — Paga (Mensalidade)' : ' — Gratuita') + '</span>' +
+            '<h2 style="color:' + tituloCor + '">' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 ' + (uni.paga ? 'Mensalidade / Auxílios e Financiamento' : 'Auxílios e Assistência Estudantil') + '</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="' + btnClass + '">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

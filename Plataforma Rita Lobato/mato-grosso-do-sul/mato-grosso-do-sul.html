@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mato Grosso do Sul - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Mato Grosso do Sul</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Mato Grosso do Sul</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFMS</h2>
+                <p><strong>Localização:</strong> Campo Grande - MS (campi em Corumbá, Três Lagoas, Aquidauana, Nova Andradina, Ponta Porã e Naviraí)</p>
+                <p>Principal universidade do estado com ampla oferta de cursos e forte pesquisa em biodiversidade do Pantanal.</p>
+                <button class="btn" onclick="abrirModal('ufms')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFGD</h2>
+                <p><strong>Localização:</strong> Dourados - MS</p>
+                <p>Universidade com destaque em agrárias e inclusão de comunidades indígenas na região da Grande Dourados.</p>
+                <button class="btn" onclick="abrirModal('ufgd')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEMS</h2>
+                <p><strong>Localização:</strong> Dourados - MS (unidades em 15 municípios)</p>
+                <p>Universidade multicampi presente em diversas cidades do estado com foco na interiorização do ensino superior.</p>
+                <button class="btn" onclick="abrirModal('uems')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades gratuitas do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufms: {
+            nome: "Universidade Federal de Mato Grosso do Sul",
+            sigla: "UFMS",
+            tipo: "Federal",
+            cidade: "Campo Grande - MS (campi em Corumbá, Três Lagoas, Aquidauana, Nova Andradina, Ponta Porã e Naviraí)",
+            descricao: "Principal universidade do estado com ampla oferta de cursos e forte pesquisa em biodiversidade do Pantanal.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Bolsa alimentação"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Farmácia",
+                "Engenharias",
+                "Ciências Biológicas",
+                "Administração",
+                "Medicina Veterinária"
+            ],
+            site: "https://www.ufms.br"
+        },
+        ufgd: {
+            nome: "Universidade Federal da Grande Dourados",
+            sigla: "UFGD",
+            tipo: "Federal",
+            cidade: "Dourados - MS",
+            descricao: "Universidade com destaque em agrárias e inclusão de comunidades indígenas na região da Grande Dourados.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)",
+                "Processo seletivo indígena"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio transporte",
+                "Programa de apoio a estudantes indígenas"
+            ],
+            cursos: [
+                "Agronomia",
+                "Engenharia de Alimentos",
+                "Direito",
+                "Medicina",
+                "Ciências Biológicas",
+                "Biotecnologia"
+            ],
+            site: "https://www.ufgd.edu.br"
+        },
+        uems: {
+            nome: "Universidade Estadual de Mato Grosso do Sul",
+            sigla: "UEMS",
+            tipo: "Estadual",
+            cidade: "Dourados - MS (unidades em 15 municípios)",
+            descricao: "Universidade multicampi presente em diversas cidades do estado com foco na interiorização do ensino superior.",
+            ingresso: [
+                "Vestibular próprio",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio alimentação",
+                "Auxílio moradia",
+                "Bolsa monitoria"
+            ],
+            cursos: [
+                "Direito",
+                "Enfermagem",
+                "Ciência da Computação",
+                "Turismo",
+                "Pedagogia",
+                "Matemática"
+            ],
+            site: "https://www.uems.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Grande do Sul - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Rio Grande do Sul</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Rio Grande do Sul</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFRGS</h2>
+                <p><strong>Localização:</strong> Porto Alegre - RS</p>
+                <p>Uma das melhores universidades do Brasil, referência internacional em Medicina e pesquisa.</p>
+                <button class="btn" onclick="abrirModal('ufrgs')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFCSPA</h2>
+                <p><strong>Localização:</strong> Porto Alegre - RS</p>
+                <p>Universidade federal dedicada exclusivamente às ciências da saúde, integrada à Santa Casa.</p>
+                <button class="btn" onclick="abrirModal('ufcspa')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFSM</h2>
+                <p><strong>Localização:</strong> Santa Maria - RS (campi em Palmeira das Missões, Frederico Westphalen e Cachoeira)</p>
+                <p>Principal universidade do interior gaúcho, com tradicional curso de Medicina e hospital-escola.</p>
+                <button class="btn" onclick="abrirModal('ufsm')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFPel</h2>
+                <p><strong>Localização:</strong> Pelotas - RS</p>
+                <p>Universidade federal da zona sul gaúcha, com reconhecida Faculdade de Medicina.</p>
+                <button class="btn" onclick="abrirModal('ufpel')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>FURG</h2>
+                <p><strong>Localização:</strong> Rio Grande - RS (campi em Santa Vitória do Palmar, Santo Antônio e São Lourenço)</p>
+                <p>Universidade federal do litoral sul, referência em ciências do mar e Medicina.</p>
+                <button class="btn" onclick="abrirModal('furg')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFFS</h2>
+                <p><strong>Localização:</strong> Passo Fundo - RS (campi em Erechim, Cerro Largo, Chapecó-SC e PR)</p>
+                <p>Universidade federal com campus médico em Passo Fundo voltado à atenção básica e SUS.</p>
+                <button class="btn" onclick="abrirModal('uffs')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UNIPAMPA</h2>
+                <p><strong>Localização:</strong> Uruguaiana - RS (campi em Bagé, Alegrete, Santana do Livramento e outros)</p>
+                <p>Universidade federal da fronteira oeste e pampa gaúcho, com curso de Medicina em Uruguaiana.</p>
+                <button class="btn" onclick="abrirModal('unipampa')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufrgs: {
+            sigla: "UFRGS",
+            nome: "Universidade Federal do Rio Grande do Sul",
+            tipo: "Federal",
+            cidade: "Porto Alegre - RS",
+            ingresso: [
+                "Vestibular próprio (UFRGS)",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Casa do Estudante (moradia)",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Engenharias",
+                "Odontologia",
+                "Farmácia",
+                "Ciência da Computação"
+            ],
+            site: "https://www.ufrgs.br"
+        },
+        ufcspa: {
+            sigla: "UFCSPA",
+            nome: "Universidade Federal de Ciências da Saúde de Porto Alegre",
+            tipo: "Federal",
+            cidade: "Porto Alegre - RS",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Biomedicina",
+                "Enfermagem",
+                "Fisioterapia",
+                "Nutrição",
+                "Farmácia"
+            ],
+            site: "https://www.ufcspa.edu.br"
+        },
+        ufsm: {
+            sigla: "UFSM",
+            nome: "Universidade Federal de Santa Maria",
+            tipo: "Federal",
+            cidade: "Santa Maria - RS (campi em Palmeira das Missões, Frederico Westphalen e Cachoeira)",
+            ingresso: [
+                "Vestibular próprio (UFSM)",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Casa do Estudante",
+                "Restaurante universitário subsidiado",
+                "Bolsa permanência"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Farmácia",
+                "Medicina Veterinária",
+                "Engenharias"
+            ],
+            site: "https://www.ufsm.br"
+        },
+        ufpel: {
+            sigla: "UFPel",
+            nome: "Universidade Federal de Pelotas",
+            tipo: "Federal",
+            cidade: "Pelotas - RS",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "PAVE (Programa de Avaliação da Vida Escolar)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Casa do Estudante",
+                "Restaurante universitário",
+                "Bolsa permanência"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Enfermagem",
+                "Direito",
+                "Medicina Veterinária"
+            ],
+            site: "https://portal.ufpel.edu.br"
+        },
+        furg: {
+            sigla: "FURG",
+            nome: "Universidade Federal do Rio Grande",
+            tipo: "Federal",
+            cidade: "Rio Grande - RS (campi em Santa Vitória, Santo Antônio e São Lourenço)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Casa do Estudante",
+                "Restaurante universitário",
+                "Bolsa permanência"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem",
+                "Oceanologia",
+                "Engenharias",
+                "Direito"
+            ],
+            site: "https://www.furg.br"
+        },
+        uffs: {
+            sigla: "UFFS",
+            nome: "Universidade Federal da Fronteira Sul",
+            tipo: "Federal",
+            cidade: "Passo Fundo - RS (campi em Erechim, Cerro Largo, Chapecó-SC e PR)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Auxílio alimentação"
+            ],
+            cursos: [
+                "Medicina (Passo Fundo e Chapecó)",
+                "Enfermagem",
+                "Agronomia",
+                "Engenharia Ambiental"
+            ],
+            site: "https://www.uffs.edu.br"
+        },
+        unipampa: {
+            sigla: "UNIPAMPA",
+            nome: "Universidade Federal do Pampa",
+            tipo: "Federal",
+            cidade: "Uruguaiana - RS (campi em 10 cidades da metade sul)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Moradia estudantil",
+                "Restaurante universitário"
+            ],
+            cursos: [
+                "Medicina (Uruguaiana)",
+                "Enfermagem",
+                "Farmácia",
+                "Fisioterapia",
+                "Medicina Veterinária"
+            ],
+            site: "https://unipampa.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() { document.getElementById('modal-overlay').classList.remove('active'); }
+    document.getElementById('modal-overlay').addEventListener('click', function(e) { if (e.target === this) fecharModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fecharModal(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Guia gratuito de informações sobre as Universidades Públicas de Medicina do Brasil</p>
+    </header>
+
+    <div class="container">
+        <h2>Selecione o Estado</h2>
+        <p>Encontre formas de ingresso, campus, mensalidades e auxílios de cada instituição.</p>
+
+        <div class="controles-ordenacao">
+            <label for="ordenacao-select">Ordenar por:</label>
+            <select id="ordenacao-select" class="select-ordenacao" onchange="ordenarEstados(this.value)">
+                <option value="alfabetica">Ordem Alfabética (A–Z)</option>
+                <option value="quantidade">Nº de Faculdades (Maior → Menor)</option>
+                <option value="regiao">Por Região</option>
+            </select>
+        </div>
+
+        <div id="estados-container">
+        <div class="grid" id="estados-grid">
+
+            <div class="card">
+                <span class="estado-icon">🏔️</span>
+                <h2>Acre</h2>
+                <p>1 universidade pública listada</p>
+                <p class="card-desc">UFAC</p>
+                <a href="acre/acre.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌴</span>
+                <h2>Alagoas</h2>
+                <p>2 universidades públicas listadas</p>
+                <p class="card-desc">UFAL · UNCISAL</p>
+                <a href="alagoas/alagoas.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌿</span>
+                <h2>Amapá</h2>
+                <p>1 universidade pública listada</p>
+                <p class="card-desc">UNIFAP</p>
+                <a href="amapa/amapa.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌳</span>
+                <h2>Amazonas</h2>
+                <p>2 universidades públicas listadas</p>
+                <p class="card-desc">UFAM · UEA</p>
+                <a href="amazonas/amazonas.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏖️</span>
+                <h2>Bahia</h2>
+                <p>9 universidades públicas listadas</p>
+                <p class="card-desc">UFBA · UFRB · UFSB · UNEB · UESC · UESB · UEFS · UFOB · UNIVASF</p>
+                <a href="bahia/bahia.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">☀️</span>
+                <h2>Ceará</h2>
+                <p>4 universidades públicas listadas</p>
+                <p class="card-desc">UFC · UFCA · UECE · UVA</p>
+                <a href="ceara/ceara.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏛️</span>
+                <h2>Distrito Federal</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UnB · ESCS · UnDF</p>
+                <a href="distrito-federal/distrito-federal.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">⛵</span>
+                <h2>Espírito Santo</h2>
+                <p>1 universidade pública listada</p>
+                <p class="card-desc">UFES</p>
+                <a href="espirito-santo/espirito-santo.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌾</span>
+                <h2>Goiás</h2>
+                <p>7 universidades públicas listadas</p>
+                <p class="card-desc">UFG · UFJ · UFCAT · UEG · UNIFIMES · UNICERRADO · UniRV</p>
+                <a href="goias/goias.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏝️</span>
+                <h2>Maranhão</h2>
+                <p>2 universidades públicas listadas</p>
+                <p class="card-desc">UFMA · UEMA</p>
+                <a href="maranhao/maranhao.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌿</span>
+                <h2>Mato Grosso</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UFMT · UNEMAT · UFR</p>
+                <a href="mato-grosso/mato-grosso.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🐊</span>
+                <h2>Mato Grosso do Sul</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UFMS · UFGD · UEMS</p>
+                <a href="mato-grosso-do-sul/mato-grosso-do-sul.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">⛰️</span>
+                <h2>Minas Gerais</h2>
+                <p>12 universidades públicas listadas</p>
+                <p class="card-desc">UFMG · UFU · UFJF · UFV · UFOP · UFLA · UEMG · UFSJ · UFTM · UFVJM · UNIFAL · UNIMONTES</p>
+                <a href="minas-gerais/minas-gerais.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌊</span>
+                <h2>Pará</h2>
+                <p>4 universidades públicas listadas</p>
+                <p class="card-desc">UFPA · UEPA · UFOPA · UNIFESSPA</p>
+                <a href="para/para.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌵</span>
+                <h2>Paraíba</h2>
+                <p>2 universidades públicas listadas</p>
+                <p class="card-desc">UFPB · UFCG</p>
+                <a href="paraiba/paraiba.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌲</span>
+                <h2>Paraná</h2>
+                <p>7 universidades públicas listadas</p>
+                <p class="card-desc">UFPR · UEL · UEM · UEPG · UNIOESTE · UNICENTRO · UNILA</p>
+                <a href="parana/parana.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏖️</span>
+                <h2>Pernambuco</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UFPE · UPE · UNIVASF</p>
+                <a href="pernambuco/pernambuco.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌞</span>
+                <h2>Piauí</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UFPI · UFDPar · UESPI</p>
+                <a href="piaui/piaui.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏔️</span>
+                <h2>Rio de Janeiro</h2>
+                <p>4 universidades públicas listadas</p>
+                <p class="card-desc">UFRJ · UFF · UNIRIO · UERJ</p>
+                <a href="rio-de-janeiro/rio-de-janeiro.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌅</span>
+                <h2>Rio Grande do Norte</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UFRN · UFERSA · UERN</p>
+                <a href="rio-grande-do-norte/rio-grande-do-norte.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🧉</span>
+                <h2>Rio Grande do Sul</h2>
+                <p>7 universidades públicas listadas</p>
+                <p class="card-desc">UFRGS · UFCSPA · UFSM · UFPel · FURG · UFFS · UNIPAMPA</p>
+                <a href="rio-grande-do-sul/rio-grande-do-sul.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🦜</span>
+                <h2>Rondônia</h2>
+                <p>1 universidade pública listada</p>
+                <p class="card-desc">UNIR</p>
+                <a href="rondonia/rondonia.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">⛰️</span>
+                <h2>Roraima</h2>
+                <p>1 universidade pública listada</p>
+                <p class="card-desc">UFRR</p>
+                <a href="roraima/roraima.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏄</span>
+                <h2>Santa Catarina</h2>
+                <p>3 universidades públicas listadas</p>
+                <p class="card-desc">UFSC · UFFS · FURB</p>
+                <a href="santa-catarina/santa-catarina.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🏙️</span>
+                <h2>São Paulo</h2>
+                <p>17 universidades públicas listadas</p>
+                <p class="card-desc">USP · UNICAMP · UNESP · UNIFESP · UFSCar · UFABC · FAMEMA · FAMERP · FAI · FMJ · FMPFM · IMESA · UNIFACEF · UNIFAE · UNIFUNEC · UNITAU · USCS</p>
+                <a href="sao-paulo/sao-paulo.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🦀</span>
+                <h2>Sergipe</h2>
+                <p>1 universidade pública listada</p>
+                <p class="card-desc">UFS</p>
+                <a href="sergipe/sergipe.html" class="btn">Ver Universidades →</a>
+            </div>
+
+            <div class="card">
+                <span class="estado-icon">🌳</span>
+                <h2>Tocantins</h2>
+                <p>4 universidades públicas listadas</p>
+                <p class="card-desc">UFT · UFNT · UNITINS · UnirG</p>
+                <a href="tocantins/tocantins.html" class="btn">Ver Universidades →</a>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const regioesPorEstado = {
+        "Acre": "Norte",
+        "Amapá": "Norte",
+        "Amazonas": "Norte",
+        "Pará": "Norte",
+        "Rondônia": "Norte",
+        "Roraima": "Norte",
+        "Tocantins": "Norte",
+        "Alagoas": "Nordeste",
+        "Bahia": "Nordeste",
+        "Ceará": "Nordeste",
+        "Maranhão": "Nordeste",
+        "Paraíba": "Nordeste",
+        "Pernambuco": "Nordeste",
+        "Piauí": "Nordeste",
+        "Rio Grande do Norte": "Nordeste",
+        "Sergipe": "Nordeste",
+        "Distrito Federal": "Centro-Oeste",
+        "Goiás": "Centro-Oeste",
+        "Mato Grosso": "Centro-Oeste",
+        "Mato Grosso do Sul": "Centro-Oeste",
+        "Espírito Santo": "Sudeste",
+        "Minas Gerais": "Sudeste",
+        "Rio de Janeiro": "Sudeste",
+        "São Paulo": "Sudeste",
+        "Paraná": "Sul",
+        "Rio Grande do Sul": "Sul",
+        "Santa Catarina": "Sul"
+    };
+
+    const ordemRegioes = ["Norte", "Nordeste", "Centro-Oeste", "Sudeste", "Sul"];
+
+    const todosCards = Array.from(document.querySelectorAll('#estados-grid .card')).map(card => {
+        const nome = card.querySelector('h2').textContent.trim();
+        const textoQtd = card.querySelector('p').textContent;
+        const match = textoQtd.match(/(\d+)/);
+        const qtd = match ? parseInt(match[1], 10) : 0;
+        const regiao = regioesPorEstado[nome] || "Outras";
+        return { el: card, nome, qtd, regiao };
+    });
+
+    function ordenarEstados(modo, btn) {
+        document.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        const container = document.getElementById('estados-container');
+        container.innerHTML = '';
+
+        if (modo === 'regiao') {
+            ordemRegioes.forEach(regiao => {
+                const grupo = todosCards
+                    .filter(c => c.regiao === regiao)
+                    .sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+
+                if (grupo.length > 0) {
+                    const titulo = document.createElement('h3');
+                    titulo.className = 'regiao-titulo';
+                    titulo.textContent = 'Região ' + regiao;
+                    container.appendChild(titulo);
+
+                    const grid = document.createElement('div');
+                    grid.className = 'grid';
+                    grupo.forEach(item => grid.appendChild(item.el));
+                    container.appendChild(grid);
+                }
+            });
+            return;
+        }
+
+        const ordenados = [...todosCards].sort((a, b) => {
+            if (modo === 'quantidade') {
+                if (b.qtd !== a.qtd) return b.qtd - a.qtd;
+            }
+            return a.nome.localeCompare(b.nome, 'pt-BR');
+        });
+
+        const grid = document.createElement('div');
+        grid.className = 'grid';
+        grid.id = 'estados-grid';
+        ordenados.forEach(item => grid.appendChild(item.el));
+        container.appendChild(grid);
+    }
+    </script>
+
+</body>
+</html>

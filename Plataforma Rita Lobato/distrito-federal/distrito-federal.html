@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distrito Federal - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Distrito Federal</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Distrito Federal</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UnB</h2>
+                <p><strong>Localização:</strong> Brasília - DF (campi em Darcy Ribeiro, Ceilândia, Gama e Planaltina)</p>
+                <p>Uma das mais prestigiadas universidades do país, referência internacional em Medicina e pesquisa científica.</p>
+                <button class="btn" onclick="abrirModal('unb')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Distrital</span>
+                <h2>ESCS</h2>
+                <p><strong>Localização:</strong> Brasília - DF (Asa Norte / Samambaia)</p>
+                <p>Escola Superior de Ciências da Saúde, faculdade pública distrital e gratuita de Medicina e Enfermagem (FEPECS).</p>
+                <button class="btn" onclick="abrirModal('escs')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Distrital</span>
+                <h2>UnDF</h2>
+                <p><strong>Localização:</strong> Brasília - DF (Lago Norte)</p>
+                <p>Universidade pública distrital gratuita criada para expandir a educação superior pública e integrada no DF.</p>
+                <button class="btn" onclick="abrirModal('undf')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        unb: {
+            sigla: "UnB",
+            nome: "Universidade de Brasília",
+            tipo: "Federal",
+            cidade: "Brasília - DF",
+            descricao: "Uma das mais prestigiadas universidades do país, com faculdade histórica de Medicina e referência em pesquisa.",
+            ingresso: [
+                "PAS (Programa de Avaliação Seriada)",
+                "Vestibular próprio tradicional",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio socioeconômico",
+                "Moradia estudantil (CEU)",
+                "Restaurante universitário subsidiado (RU)",
+                "Auxílio emergencial",
+                "Programa Bolsa Alimentação"
+            ],
+            cursos: [
+                "Medicina (Darcy Ribeiro)",
+                "Direito",
+                "Relações Internacionais",
+                "Engenharias",
+                "Arquitetura",
+                "Ciência Política",
+                "Comunicação Social",
+                "Enfermagem (Ceilândia)"
+            ],
+            site: "https://www.unb.br"
+        },
+        escs: {
+            sigla: "ESCS",
+            nome: "Escola Superior de Ciências da Saúde",
+            tipo: "Distrital",
+            cidade: "Brasília - DF (Asa Norte / Samambaia)",
+            descricao: "Instituição pública distrital totalmente gratuita vinculada à FEPECS e à Secretaria de Saúde do DF. É referência nacional na formação médica com o método de Aprendizagem Baseada em Problemas (PBL).",
+            ingresso: [
+                "SiSU (100% das vagas via nota do ENEM)",
+                "Sistema de Cotas Sociais (escola pública do DF)"
+            ],
+            auxilios: [
+                "Bolsa de permanência estudantil",
+                "Auxílio socioeconômico",
+                "Apoio a projetos de extensão e pesquisa (PIC/FEPECS)"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem"
+            ],
+            site: "http://www.escs.edu.br"
+        },
+        undf: {
+            sigla: "UnDF",
+            nome: "Universidade do Distrito Federal Professor Jorge Amaury Maia Nunes",
+            tipo: "Distrital",
+            cidade: "Brasília - DF (Campus Universitário Norte / Lago Norte)",
+            descricao: "Universidade pública distrital gratuita vinculada ao Governo do Distrito Federal, voltada ao ensino, pesquisa e extensão com cursos modernos e formação cidadã.",
+            ingresso: [
+                "Processo seletivo próprio via nota do ENEM",
+                "SiSU",
+                "Sistema distrital de cotas"
+            ],
+            auxilios: [
+                "Bolsa permanência da UnDF",
+                "Auxílio transporte",
+                "Auxílio alimentação e apoio pedagógico"
+            ],
+            cursos: [
+                "Ciências da Saúde",
+                "Engenharia de Software",
+                "Pedagogia",
+                "Gestão Pública",
+                "Ciências Ambientais"
+            ],
+            site: "https://universidade.df.gov.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

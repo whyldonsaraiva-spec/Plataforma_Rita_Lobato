@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pará - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Pará</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Pará</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFPA</h2>
+                <p><strong>Localização:</strong> Belém - PA (campi em Altamira, Bragança, Castanhal, Tucuruí e outros)</p>
+                <p>Maior universidade da Região Norte, referência em Medicina, pesquisa amazônica e ciências da saúde.</p>
+                <button class="btn" onclick="abrirModal('ufpa')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEPA</h2>
+                <p><strong>Localização:</strong> Belém - PA (campi em Santarém, Marabá e diversos municípios)</p>
+                <p>Universidade estadual gratuita com forte tradição na formação médica e interiorização no Pará.</p>
+                <button class="btn" onclick="abrirModal('uepa')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFOPA</h2>
+                <p><strong>Localização:</strong> Santarém - PA (campi em Oriximiná, Itaituba, Juruti e outros)</p>
+                <p>Universidade federal voltada ao Oeste do Pará, com destaque em biodiversidade, saúde e formação regional.</p>
+                <button class="btn" onclick="abrirModal('ufopa')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UNIFESSPA</h2>
+                <p><strong>Localização:</strong> Marabá - PA (campi em Santana do Araguaia, Xinguara e Rondon do Pará)</p>
+                <p>Universidade federal estratégica do Sul e Sudeste do Pará, com forte atuação em saúde e engenharias.</p>
+                <button class="btn" onclick="abrirModal('unifesspa')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufpa: {
+            sigla: "UFPA",
+            nome: "Universidade Federal do Pará",
+            tipo: "Federal",
+            cidade: "Belém - PA (campi em Altamira, Bragança, Castanhal, Tucuruí e outros)",
+            ingresso: [
+                "Processo Seletivo Próprio (PS UFPA via ENEM)",
+                "Cotas (Lei de Cotas federal)",
+                "Bônus regional"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Belém e Altamira)",
+                "Odontologia",
+                "Farmácia",
+                "Direito",
+                "Engenharias",
+                "Ciências Biológicas"
+            ],
+            site: "https://www.ufpa.br"
+        },
+        uepa: {
+            sigla: "UEPA",
+            nome: "Universidade do Estado do Pará",
+            tipo: "Estadual",
+            cidade: "Belém - PA (campi em Santarém, Marabá e outros municípios)",
+            ingresso: [
+                "PROSEL (Processo Seletivo via ENEM)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio alimentação",
+                "Auxílio transporte",
+                "Bolsas de monitoria"
+            ],
+            cursos: [
+                "Medicina (Belém, Santarém e Marabá)",
+                "Enfermagem",
+                "Fisioterapia",
+                "Terapia Ocupacional",
+                "Educação Física",
+                "Engenharia de Produção"
+            ],
+            site: "https://www.uepa.br"
+        },
+        ufopa: {
+            sigla: "UFOPA",
+            nome: "Universidade Federal do Oeste do Pará",
+            tipo: "Federal",
+            cidade: "Santarém - PA (campi no Oeste do Pará)",
+            ingresso: [
+                "PSR (Processo Seletivo Regular via ENEM)",
+                "SiSU",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Auxílio alimentação",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Farmácia",
+                "Biotecnologia",
+                "Direito",
+                "Engenharia Florestal",
+                "Ciências Biológicas",
+                "Pedagogia"
+            ],
+            site: "https://www.ufopa.edu.br"
+        },
+        unifesspa: {
+            sigla: "UNIFESSPA",
+            nome: "Universidade Federal do Sul e Sudeste do Pará",
+            tipo: "Federal",
+            cidade: "Marabá - PA (campi em Santana do Araguaia, Xinguara e Rondon do Pará)",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina Veterinária",
+                "Saúde Coletiva",
+                "Direito",
+                "Engenharia Civil",
+                "Engenharia de Minas",
+                "Psicologia"
+            ],
+            site: "https://www.unifesspa.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() { document.getElementById('modal-overlay').classList.remove('active'); }
+    document.getElementById('modal-overlay').addEventListener('click', function(e) { if (e.target === this) fecharModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fecharModal(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goiás - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Goiás</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Goiás</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="legenda">
+            <div class="legenda-item">
+                <span class="legenda-cor verde"></span>
+                <span>Pública Gratuita</span>
+            </div>
+            <div class="legenda-item">
+                <span class="legenda-cor vermelha"></span>
+                <span>Pública Paga (Cobra Mensalidade)</span>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFG</h2>
+                <p><strong>Localização:</strong> Goiânia - GO</p>
+                <p>Principal universidade do estado, referência em ciências da saúde e humanidades.</p>
+                <button class="btn" onclick="abrirModal('ufg')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFJ</h2>
+                <p><strong>Localização:</strong> Jataí - GO</p>
+                <p>Criada a partir do desmembramento da UFG, com foco em agrárias e exatas.</p>
+                <button class="btn" onclick="abrirModal('ufj')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFCat</h2>
+                <p><strong>Localização:</strong> Catalão - GO</p>
+                <p>Universidade jovem oriunda da UFG com destaque em engenharias e licenciaturas.</p>
+                <button class="btn" onclick="abrirModal('ufcat')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEG</h2>
+                <p><strong>Localização:</strong> Anápolis - GO (campi em diversas cidades)</p>
+                <p>Maior universidade estadual de Goiás com presença em mais de 40 municípios.</p>
+                <button class="btn" onclick="abrirModal('ueg')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UNIFIMES</h2>
+                <p><strong>Localização:</strong> Mineiros - GO (campi em Trindade e Goiânia)</p>
+                <p>Centro Universitário público municipal mantido pela FIMES. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unifimes')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UNICERRADO</h2>
+                <p><strong>Localização:</strong> Goiatuba - GO</p>
+                <p>Centro Universitário público municipal mantido pela FAMESG. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unicerrado')">Ver Informações</button>
+            </div>
+
+            <div class="card card-paga">
+                <span class="tag-paga">Municipal (Paga)</span>
+                <h2>UniRV</h2>
+                <p><strong>Localização:</strong> Rio Verde - GO (campi em Aparecida, Goianésia, Formosa e Luziânia)</p>
+                <p>Tradicional universidade pública municipal com grande destaque em Medicina. Cobra mensalidade.</p>
+                <button class="btn-paga" onclick="abrirModal('unirv')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufg: {
+            nome: "Universidade Federal de Goiás",
+            sigla: "UFG",
+            tipo: "Federal",
+            paga: false,
+            cidade: "Goiânia - GO",
+            descricao: "Principal universidade do estado, referência em ciências da saúde e humanidades.",
+            ingresso: [
+                "SiSU",
+                "Vestibular própio"
+            ],
+            auxilios: [
+                "Programa Acolhe UFG",
+                "Programa Moradia Estudantil",
+                "Bolsa Apoio Pedagógico",
+                "Bolsa Canguru",
+                "Programa de Alimentação",
+                "Programas de Inclusão (Bolsa Permanência, PAET, Etc.)",
+
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Engenharias",
+                "Farmácia",
+                "Música",
+                "Ciências Biológicas",
+                "Letras"
+            ],
+            site: "https://www.ufg.br"
+        },
+        ufj: {
+            nome: "Universidade Federal de Jataí",
+            sigla: "UFJ",
+            tipo: "Federal",
+            paga: false,
+            cidade: "Jataí - GO",
+            descricao: "Criada a partir do desmembramento da UFG, com foco em agrárias e exatas.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Agronomia",
+                "Medicina Veterinária",
+                "Ciência da Computação",
+                "Matemática",
+                "Pedagogia",
+                "Educação Física"
+            ],
+            site: "https://www.ufj.edu.br"
+        },
+        ufcat: {
+            nome: "Universidade Federal de Catalão",
+            sigla: "UFCat",
+            tipo: "Federal",
+            paga: false,
+            cidade: "Catalão - GO",
+            descricao: "Universidade jovem oriunda da UFG com destaque em engenharias e licenciaturas.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Engenharia de Minas",
+                "Engenharia Civil",
+                "Psicologia",
+                "Química",
+                "Letras",
+                "Geografia"
+            ],
+            site: "https://www.ufcat.edu.br"
+        },
+        ueg: {
+            nome: "Universidade Estadual de Goiás",
+            sigla: "UEG",
+            tipo: "Estadual",
+            paga: false,
+            cidade: "Anápolis - GO (campi em diversas cidades)",
+            descricao: "Maior universidade estadual de Goiás com presença em mais de 40 municípios.",
+            ingresso: [
+                "Vestibular próprio (SAS/UEG)",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio alimentação",
+                "Auxílio transporte",
+                "Bolsa monitoria"
+            ],
+            cursos: [
+                "Farmácia",
+                "Arquitetura",
+                "Engenharia Agrícola",
+                "Administração",
+                "Pedagogia",
+                "Ciências Biológicas"
+            ],
+            site: "https://www.ueg.br"
+        },
+        unifimes: {
+            nome: "Centro Universitário de Mineiros",
+            sigla: "UNIFIMES",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Mineiros - GO (campi em Trindade e Goiânia)",
+            descricao: "Centro Universitário público municipal criado por lei municipal e mantido pela Fundação Integrada Municipal de Ensino Superior (FIMES). Cobra mensalidades.",
+            ingresso: [
+                "Vestibular próprio (banca Vunesp para Medicina)",
+                "Processo seletivo via nota do ENEM",
+                "Transferência e segunda graduação"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Programa de bolsas municipais por convênio",
+                "Parcelamento estudantil próprio"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Agronomia",
+                "Medicina Veterinária",
+                "Pedagogia",
+                "Psicologia"
+            ],
+            site: "https://unifimes.edu.br"
+        },
+        unicerrado: {
+            nome: "Centro Universitário de Goiatuba",
+            sigla: "UNICERRADO",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Goiatuba - GO",
+            descricao: "Autarquia pública municipal mantida pela Fundação Municipal de Ensino Superior de Goiatuba (FAMESG). Possui curso tradicional de Medicina e cobra mensalidades.",
+            ingresso: [
+                "Vestibular próprio para Medicina",
+                "Nota do ENEM",
+                "Vestibular agendado para outros cursos"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "Bolsas de estudo municipais da prefeitura",
+                "Descontos e convênios locais"
+            ],
+            cursos: [
+                "Medicina",
+                "Direito",
+                "Odontologia",
+                "Enfermagem",
+                "Agronomia",
+                "Engenharia Civil"
+            ],
+            site: "https://unicerrado.edu.br"
+        },
+        unirv: {
+            nome: "Universidade de Rio Verde",
+            sigla: "UniRV",
+            tipo: "Municipal",
+            paga: true,
+            cidade: "Rio Verde - GO (campi em Aparecida de Goiânia, Goianésia, Formosa e Luziânia)",
+            descricao: "Uma das maiores universidades públicas municipais do Brasil, referência nacional no curso de Medicina com 5 campi. É uma autarquia municipal com cobrança de mensalidades.",
+            ingresso: [
+                "Vestibular próprio tradicional",
+                "Vestibular específico para Medicina (múltiplos campi)",
+                "Aproveitamento da nota do ENEM"
+            ],
+            auxilios: [
+                "Financiamento Estudantil (FIES)",
+                "PROUNI",
+                "Programa de Bolsas da Prefeitura de Rio Verde",
+                "CrediRV (Programa de Financiamento Próprio da UniRV)"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Medicina Veterinária",
+                "Direito",
+                "Agronomia",
+                "Fisioterapia",
+                "Enfermagem"
+            ],
+            site: "https://www.unirv.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        const tagClass = uni.paga ? 'tag-paga' : 'tag';
+        const btnClass = uni.paga ? 'btn-paga' : 'btn';
+        const tituloCor = uni.paga ? '#c62828' : '#2e7d32';
+        const modalEl = document.querySelector('.modal');
+        if (modalEl) {
+            modalEl.style.borderTopColor = uni.paga ? '#c62828' : '#43a047';
+        }
+        document.getElementById('modal-body').innerHTML =
+            '<span class="' + tagClass + '">' + uni.tipo + (uni.paga ? ' — Paga (Mensalidade)' : ' — Gratuita') + '</span>' +
+            '<h2 style="color:' + tituloCor + '">' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 ' + (uni.paga ? 'Mensalidade / Auxílios e Financiamento' : 'Auxílios e Assistência Estudantil') + '</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="' + btnClass + '">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>

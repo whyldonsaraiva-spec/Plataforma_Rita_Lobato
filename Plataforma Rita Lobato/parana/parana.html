@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraná - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Paraná</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Paraná</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFPR</h2>
+                <p><strong>Localização:</strong> Curitiba - PR (campi em Toledo, Palotina, Matinhos e outros)</p>
+                <p>Mais antiga universidade do Brasil, referência em Medicina (Curitiba e Toledo) e pesquisa.</p>
+                <button class="btn" onclick="abrirModal('ufpr')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEL</h2>
+                <p><strong>Localização:</strong> Londrina - PR</p>
+                <p>Uma das melhores universidades estaduais do país, com tradicional Hospital Universitário e Medicina.</p>
+                <button class="btn" onclick="abrirModal('uel')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEM</h2>
+                <p><strong>Localização:</strong> Maringá - PR</p>
+                <p>Referência estadual gratuita no noroeste do Paraná, com forte atuação em Medicina e saúde.</p>
+                <button class="btn" onclick="abrirModal('uem')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UEPG</h2>
+                <p><strong>Localização:</strong> Ponta Grossa - PR</p>
+                <p>Universidade estadual gratuita dos Campos Gerais, com consolidado curso de Medicina.</p>
+                <button class="btn" onclick="abrirModal('uepg')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNIOESTE</h2>
+                <p><strong>Localização:</strong> Cascavel - PR (campi em Francisco Beltrão, Foz do Iguaçu, Toledo e Marechal)</p>
+                <p>Universidade estadual multicampi do Oeste paranaense, com Medicina em Cascavel e Francisco Beltrão.</p>
+                <button class="btn" onclick="abrirModal('unioeste')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNICENTRO</h2>
+                <p><strong>Localização:</strong> Guarapuava - PR (campi em Irati e outras cidades)</p>
+                <p>Universidade estadual gratuita do Centro-Oeste do Paraná, com curso de Medicina em Guarapuava.</p>
+                <button class="btn" onclick="abrirModal('unicentro')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UNILA</h2>
+                <p><strong>Localização:</strong> Foz do Iguaçu - PR</p>
+                <p>Universidade federal bilíngue voltada à integração latino-americana, com curso de Medicina.</p>
+                <button class="btn" onclick="abrirModal('unila')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufpr: {
+            sigla: "UFPR",
+            nome: "Universidade Federal do Paraná",
+            tipo: "Federal",
+            cidade: "Curitiba - PR (campi em Toledo, Palotina, Matinhos e outros)",
+            ingresso: [
+                "Vestibular próprio (UFPR)",
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina (Curitiba e Toledo)",
+                "Direito",
+                "Engenharias",
+                "Odontologia",
+                "Farmácia",
+                "Ciência da Computação"
+            ],
+            site: "https://www.ufpr.br"
+        },
+        uel: {
+            sigla: "UEL",
+            nome: "Universidade Estadual de Londrina",
+            tipo: "Estadual",
+            cidade: "Londrina - PR",
+            ingresso: [
+                "Vestibular próprio (UEL)",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Moradia estudantil",
+                "Restaurante universitário subsidiado"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Direito",
+                "Enfermagem",
+                "Medicina Veterinária"
+            ],
+            site: "https://portal.uel.br"
+        },
+        uem: {
+            sigla: "UEM",
+            nome: "Universidade Estadual de Maringá",
+            tipo: "Estadual",
+            cidade: "Maringá - PR",
+            ingresso: [
+                "Vestibular próprio (UEM)",
+                "PAS (Processo de Avaliação Seriada)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Moradia estudantil",
+                "Restaurante universitário"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Farmácia",
+                "Engenharias",
+                "Direito"
+            ],
+            site: "https://www.uem.br"
+        },
+        uepg: {
+            sigla: "UEPG",
+            nome: "Universidade Estadual de Ponta Grossa",
+            tipo: "Estadual",
+            cidade: "Ponta Grossa - PR",
+            ingresso: [
+                "Vestibular próprio",
+                "PSS (Processo Seletivo Seriado)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Odontologia",
+                "Farmácia",
+                "Enfermagem",
+                "Direito"
+            ],
+            site: "https://www.uepg.br"
+        },
+        unioeste: {
+            sigla: "UNIOESTE",
+            nome: "Universidade Estadual do Oeste do Paraná",
+            tipo: "Estadual",
+            cidade: "Cascavel - PR (campi em Francisco Beltrão, Foz do Iguaçu, Toledo e Marechal)",
+            ingresso: [
+                "Vestibular próprio",
+                "SiSU (via nota do ENEM)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário",
+                "Auxílio moradia"
+            ],
+            cursos: [
+                "Medicina (Cascavel e Francisco Beltrão)",
+                "Enfermagem",
+                "Odontologia",
+                "Farmácia",
+                "Direito"
+            ],
+            site: "https://www.unioeste.br"
+        },
+        unicentro: {
+            sigla: "UNICENTRO",
+            nome: "Universidade Estadual do Centro-Oeste",
+            tipo: "Estadual",
+            cidade: "Guarapuava - PR (campus em Irati)",
+            ingresso: [
+                "Vestibular próprio",
+                "PAC (Programa de Avaliação Continuada)",
+                "SiSU"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário",
+                "Bolsas de pesquisa"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem",
+                "Fisioterapia",
+                "Nutrição",
+                "Medicina Veterinária"
+            ],
+            site: "https://www3.unicentro.br"
+        },
+        unila: {
+            sigla: "UNILA",
+            nome: "Universidade Federal da Integração Latino-Americana",
+            tipo: "Federal",
+            cidade: "Foz do Iguaçu - PR",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Auxílio alimentação",
+                "Auxílio transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Saúde Coletiva",
+                "Biotecnologia",
+                "Relações Internacionais",
+                "Engenharia Civil"
+            ],
+            site: "https://portal.unila.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() { document.getElementById('modal-overlay').classList.remove('active'); }
+    document.getElementById('modal-overlay').addEventListener('click', function(e) { if (e.target === this) fecharModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fecharModal(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mato Grosso - Plataforma Rita Lobato</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Plataforma Rita Lobato</h1>
+        <p>Universidades Públicas — Mato Grosso</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="btn-voltar">← Voltar aos Estados</a>
+        <h2>Universidades Públicas — Mato Grosso</h2>
+        <p>Clique em "Ver Informações" para detalhes completos sobre cada instituição.</p>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFMT</h2>
+                <p><strong>Localização:</strong> Cuiabá - MT (campi em Sinop e Barra do Garças)</p>
+                <p>Maior universidade federal do estado, referência em Medicina, agrárias e ciências ambientais.</p>
+                <button class="btn" onclick="abrirModal('ufmt')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Estadual</span>
+                <h2>UNEMAT</h2>
+                <p><strong>Localização:</strong> Cáceres - MT (campi em 13 cidades do estado)</p>
+                <p>Universidade estadual multicampi com curso de Medicina em Cáceres e forte inserção no interior.</p>
+                <button class="btn" onclick="abrirModal('unemat')">Ver Informações</button>
+            </div>
+
+            <div class="card">
+                <span class="tag">Federal</span>
+                <h2>UFR</h2>
+                <p><strong>Localização:</strong> Rondonópolis - MT</p>
+                <p>Universidade federal desmembrada da UFMT, polo acadêmico da região sul mato-grossense com Medicina.</p>
+                <button class="btn" onclick="abrirModal('ufr')">Ver Informações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharModal()">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plataforma Rita Lobato &copy; 2026 — Informações públicas sobre universidades do Brasil</p>
+    </footer>
+
+    <script>
+    const universidades = {
+        ufmt: {
+            nome: "Universidade Federal de Mato Grosso",
+            sigla: "UFMT",
+            tipo: "Federal",
+            cidade: "Cuiabá - MT (campi em Sinop e Barra do Garças)",
+            descricao: "Maior universidade do estado com forte atuação em agrárias e ciências ambientais, com cursos de Medicina em Cuiabá e Sinop.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio moradia",
+                "Restaurante universitário subsidiado",
+                "Auxílio transporte",
+                "Auxílio creche"
+            ],
+            cursos: [
+                "Medicina (Cuiabá e Sinop)",
+                "Direito",
+                "Agronomia",
+                "Engenharia Florestal",
+                "Zootecnia",
+                "Arquitetura",
+                "Ciência da Computação"
+            ],
+            site: "https://www.ufmt.br"
+        },
+        unemat: {
+            nome: "Universidade do Estado de Mato Grosso",
+            sigla: "UNEMAT",
+            tipo: "Estadual",
+            cidade: "Cáceres - MT (campi em 13 cidades do estado)",
+            descricao: "Universidade multicampi com forte atuação no interior do estado, com campus de Medicina em Cáceres.",
+            ingresso: [
+                "Vestibular próprio",
+                "SiSU (vagas parciais)",
+                "Cotas estaduais"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Auxílio alimentação",
+                "Auxílio moradia",
+                "Bolsa monitoria"
+            ],
+            cursos: [
+                "Medicina (Cáceres)",
+                "Pedagogia",
+                "Letras",
+                "Ciências Biológicas",
+                "Administração",
+                "Agronomia",
+                "Enfermagem"
+            ],
+            site: "https://www.unemat.br"
+        },
+        ufr: {
+            nome: "Universidade Federal de Rondonópolis",
+            sigla: "UFR",
+            tipo: "Federal",
+            cidade: "Rondonópolis - MT",
+            descricao: "Criada pelo desmembramento do campus de Rondonópolis da UFMT, instituição com curso de Medicina de excelência e foco no desenvolvimento socioeconômico da região.",
+            ingresso: [
+                "SiSU (via nota do ENEM)",
+                "Cotas (Lei de Cotas federal)",
+                "Ações afirmativas"
+            ],
+            auxilios: [
+                "Bolsa permanência",
+                "Restaurante universitário",
+                "Auxílio moradia estudantil",
+                "Auxílio alimentação e transporte"
+            ],
+            cursos: [
+                "Medicina",
+                "Enfermagem",
+                "Engenharia Agrícola e Ambiental",
+                "Ciências Biológicas",
+                "Ciências Contábeis",
+                "Psicologia",
+                "Letras"
+            ],
+            site: "https://ufr.edu.br"
+        }
+    };
+
+    function abrirModal(id) {
+        const uni = universidades[id];
+        if (!uni) return;
+        let cursosHtml = uni.cursos.map(c => '<li>' + c + '</li>').join('');
+        let ingressoHtml = uni.ingresso.map(i => '<li>' + i + '</li>').join('');
+        let auxiliosHtml = uni.auxilios.map(a => '<li>' + a + '</li>').join('');
+        document.getElementById('modal-body').innerHTML =
+            '<span class="tag">' + uni.tipo + '</span>' +
+            '<h2>' + uni.nome + ' (' + uni.sigla + ')</h2>' +
+            '<div class="info-section"><h3>📍 Localização</h3><p>' + uni.cidade + '</p></div>' +
+            '<div class="info-section"><h3>📝 Formas de Ingresso</h3><ul>' + ingressoHtml + '</ul></div>' +
+            '<div class="info-section"><h3>💰 Auxílios e Assistência Estudantil</h3><ul>' + auxiliosHtml + '</ul></div>' +
+            '<div class="info-section"><h3>📚 Principais Áreas e Cursos</h3><ul>' + cursosHtml + '</ul></div>' +
+            '<div class="info-section"><a href="' + uni.site + '" target="_blank" class="btn">Acessar Site Oficial →</a></div>';
+        document.getElementById('modal-overlay').classList.add('active');
+    }
+
+    function fecharModal() {
+        document.getElementById('modal-overlay').classList.remove('active');
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fecharModal();
+    });
+    </script>
+</body>
+</html>
